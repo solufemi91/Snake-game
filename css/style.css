@@ -1,0 +1,14 @@
+table {
+  margin: 0 auto;
+  border-radius:10px;
+}
+
+
+td {
+
+  width: 400px;
+  height: 400px;
+  text-align: center;
+  font-size: 8em;
+  border: 1px solid red;
+}

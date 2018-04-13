@@ -12,3 +12,9 @@ td {
   font-size: 8em;
   border: 1px solid red;
 }
+
+#snake {
+  width: 200px;
+  height: 10px;
+  background: red;
+}

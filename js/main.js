@@ -13,10 +13,18 @@ $(function(event) {
   function displayDate() {
       console.log(Date());
   }
-  //moveSnakeRight();
 
-  //$button.addEventListener("click", displayDate);
-  //$button.click(moveSnakeRight);
-  $body.keydown(moveSnakeRight);
+  $(document).ready(function(){
+    $body.keydown(function(event){
+        console.log("Key: " + event.which);
+        if (event.which == 39 ) {
+          moveSnakeRight();
+        }
+    });
+  });
+
+
+
+  //$body.keydown(moveSnakeRight);
 
 })

@@ -4,7 +4,7 @@ table {
 }
 
 
-td {
+.square {
 
   width: 400px;
   height: 400px;
@@ -13,10 +13,11 @@ td {
   border: 1px solid red;
 }
 
-#snake {
-  width: 200px;
-  height: 10px;
+.snake {
+  width: 20px;
+  height: 20px;
   background: red;
-  margin-left: 0px;
-  margin-top: 0px;
+  /* margin-left: -31px;
+  margin-top: 0px; */
+  display: inline-block;
 }

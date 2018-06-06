@@ -24,6 +24,7 @@ $(function(event) {
         if (event.which == 39 ) {
           moveSnakeRight();
         }  else if (event.which == 37 ) {
+          $snake.stop();
           moveSnakeLeft();
         }
     });

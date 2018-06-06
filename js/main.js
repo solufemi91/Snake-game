@@ -8,7 +8,7 @@ $(function(event) {
   function moveSnakeRight() {
     $snake.animate({
       marginLeft: 198 + "px"
-    },10000);
+    },1000);
   };
 
   function moveSnakeLeft() {
@@ -17,15 +17,34 @@ $(function(event) {
     },1000);
   };
 
+  function moveSnakeUp() {
+    $snake.animate({
+      marginTop: -198 + "px"
+    },1000);
+  };
+
+  function moveSnakeDown() {
+      $snake.animate({
+        marginTop: 386 + "px"
+      },1000);
+    };
+
 
   $(document).ready(function(){
     $body.keydown(function(event){
         console.log("Key: " + event.which);
         if (event.which == 39 ) {
+          $snake.stop();
           moveSnakeRight();
         }  else if (event.which == 37 ) {
           $snake.stop();
           moveSnakeLeft();
+        } else if (event.which == 38 ) {
+          $snake.stop();
+          moveSnakeUp();
+        } else if (event.which == 40) {
+          $snake.stop();
+          moveSnakeDown();
         }
     });
   });

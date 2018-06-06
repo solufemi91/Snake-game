@@ -3,6 +3,7 @@ $(function(event) {
   var $snake = $('#snake')
   var $demo = $('#demo')
   var $button = $('#myBtn')
+  var $body = $('body')
 
   function moveSnakeRight() {
     $snake.animate({
@@ -15,6 +16,7 @@ $(function(event) {
   //moveSnakeRight();
 
   //$button.addEventListener("click", displayDate);
-  $button.click(moveSnakeRight);
+  //$button.click(moveSnakeRight);
+  $body.keydown(moveSnakeRight);
 
 })

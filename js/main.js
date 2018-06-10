@@ -8,7 +8,7 @@ $(function(event) {
   function moveSnakeRight() {
     $snake.animate({
       marginLeft: 198 + "px"
-    },10000);
+    },1000);
   };
 
   function moveSnakeLeft() {
@@ -22,6 +22,7 @@ $(function(event) {
     $body.keydown(function(event){
         console.log("Key: " + event.which);
         if (event.which == 39 ) {
+          $snake.stop();
           moveSnakeRight();
         }  else if (event.which == 37 ) {
           $snake.stop();

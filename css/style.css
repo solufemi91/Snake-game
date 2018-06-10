@@ -1,23 +1,24 @@
-table {
-  margin: 0 auto;
-  border-radius:10px;
-}
+
 
 
 .square {
 
   width: 400px;
   height: 400px;
-  text-align: center;
+  /* text-align: center; */
   font-size: 8em;
   border: 1px solid red;
+  margin: 0 auto;
 }
 
 .snake {
   width: 20px;
   height: 20px;
   background: red;
-  /* margin-left: -31px;
-  margin-top: 0px; */
   display: inline-block;
+}
+
+.non-middle {
+  margin-left: 0px;
+  /* margin-left: -31px; */
 }

@@ -17,6 +17,18 @@ $(function(event) {
     },1000);
   };
 
+  function moveSnakeDown() {
+    $snake.animate({
+      marginTop: 385 + "px"
+    },1000);
+  };
+
+  function moveSnakeUp() {
+    $snake.animate({
+      marginTop: -198 + "px"
+    },1000);
+  };
+
 
   $(document).ready(function(){
     $body.keydown(function(event){
@@ -27,6 +39,12 @@ $(function(event) {
         }  else if (event.which == 37 ) {
           $snake.stop();
           moveSnakeLeft();
+        }  else if (event.which == 38 ) {
+          $snake.stop();
+          moveSnakeUp();
+        } else if (event.which == 40 ) {
+          $snake.stop();
+          moveSnakeDown();
         }
     });
   });

@@ -1,19 +1,23 @@
 $(function(event) {
 
-  var $snake = $('#snake')
+  var $snake = $('.snake')
   var $demo = $('#demo')
   var $button = $('#myBtn')
   var $body = $('body')
 
   function moveSnakeRight() {
     $snake.animate({
-      marginLeft: 198 + "px"
+      marginLeft: 316 + "px",
+      marginRight: -316 + "px"
     },1000);
+
+
   };
 
   function moveSnakeLeft() {
     $snake.animate({
-      marginLeft: 0 + "px"
+      marginLeft: 0 + "px",
+      marginRight: 0 + "px"
     },1000);
   };
 

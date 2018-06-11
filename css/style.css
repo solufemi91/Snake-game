@@ -6,7 +6,7 @@
   width: 400px;
   height: 400px;
   /* text-align: center; */
-  font-size: 8em;
+  font-size: 0em;
   border: 1px solid red;
   margin: 0 auto;
 }
@@ -16,9 +16,12 @@
   height: 20px;
   background: red;
   display: inline-block;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
 }
 
-.non-middle {
+/* .non-middle {
   margin-left: 0px;
   /* margin-left: -31px; */
-}
+} */

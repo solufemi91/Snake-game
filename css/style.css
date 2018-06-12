@@ -21,7 +21,11 @@
   margin-top: 0px;
 }
 
-/* .non-middle {
+#head {
+  margin-top: 0px;
+}
+
+#tail {
   margin-left: 0px;
-  /* margin-left: -31px; */
-} */
+  margin-top: 0px;
+}

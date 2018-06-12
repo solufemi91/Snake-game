@@ -1,9 +1,11 @@
 $(function(event) {
 
-  var $snake = $('.snake')
-  var $demo = $('#demo')
-  var $button = $('#myBtn')
-  var $body = $('body')
+  var $snake = $('.snake');
+  var $demo = $('#demo');
+  var $button = $('#myBtn');
+  var $body = $('body');
+  var $head = $('#head');
+  var $tail = $('#tail');
 
   function moveSnakeRight() {
     $snake.animate({
@@ -28,9 +30,15 @@ $(function(event) {
   };
 
   function moveSnakeDown() {
-      $snake.animate({
-        marginTop: 378 + "px"
-      },1000);
+      // $snake.animate({
+      //   marginTop: 378 + "px"
+      // },1000);
+      // $head.css({marginTop: 0 + "px", display: inherit, marginLeft: 60 + "px"});
+      var distanceOfTailFromBorder = $tail.css("marginLeft").slice(0, -2);
+      //console.log(distanceOfTailFromBorder)
+      var newDistanceOfHead = +distanceOfTailFromBorder + 60
+      //console.log(newDistanceOfHead)
+      $head.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
     };
 
 

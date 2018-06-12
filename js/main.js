@@ -7,8 +7,8 @@ $(function(event) {
 
   function moveSnakeRight() {
     $snake.animate({
-      marginLeft: 316 + "px",
-      marginRight: -316 + "px"
+      marginLeft: 318 + "px",
+      marginRight: -318 + "px"
     },1000);
 
 
@@ -23,13 +23,13 @@ $(function(event) {
 
   function moveSnakeUp() {
     $snake.animate({
-      marginTop: -198 + "px"
+      marginTop: 0 + "px"
     },1000);
   };
 
   function moveSnakeDown() {
       $snake.animate({
-        marginTop: 386 + "px"
+        marginTop: 378 + "px"
       },1000);
     };
 

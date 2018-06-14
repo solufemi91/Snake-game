@@ -6,6 +6,7 @@ $(function(event) {
   var $body = $('body');
   var $head = $('#head');
   var $tail = $('#tail');
+  var $snakeNoHead = $("[class='snake'][id!='head']");
 
   function moveSnakeRight() {
     $snake.animate({
@@ -35,10 +36,11 @@ $(function(event) {
       // },1000);
       // $head.css({marginTop: 0 + "px", display: inherit, marginLeft: 60 + "px"});
       var distanceOfTailFromBorder = $tail.css("marginLeft").slice(0, -2);
-      //console.log(distanceOfTailFromBorder)
       var newDistanceOfHead = +distanceOfTailFromBorder + 60
-      //console.log(newDistanceOfHead)
       $head.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
+      // move the three blocks to the right. the blocks must move the distance of one block, without moving the head
+      // move all the snakes that don't have a class of head
+      $snakeNoHead.css("background","blue")
     };
 
 

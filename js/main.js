@@ -40,7 +40,8 @@ $(function(event) {
       $head.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
       // move the three blocks to the right. the blocks must move the distance of one block, without moving the head
       // move all the snakes that don't have a class of head
-      $snakeNoHead.css("background","blue")
+      var distanceOfTailFromBorderForTurn = +distanceOfTailFromBorder + 20
+      $tail.css("marginLeft", distanceOfTailFromBorderForTurn + "px")
     };
 
 

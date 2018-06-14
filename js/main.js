@@ -50,6 +50,9 @@ $(function(event) {
       $tail.css("marginLeft", +distanceOfTailFromBorderForTurn + 20 + "px")
       $three.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
       $tail.css("marginLeft", +distanceOfTailFromBorderForTurn + 40 + "px")
+      $tail.animate({
+        marginTop: 318 + "px"
+      },1000);
     };
 
 

@@ -41,18 +41,56 @@ $(function(event) {
 
   function moveSnakeDown() {
 
-      var distanceOfTailFromBorder = $tail.css("marginLeft").slice(0, -2);
-      var newDistanceOfHead = +distanceOfTailFromBorder + 60
-      $head.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
-      var distanceOfTailFromBorderForTurn = +distanceOfTailFromBorder + 20
-      $tail.css("marginLeft", distanceOfTailFromBorderForTurn + "px")
-      $two.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
-      $tail.css("marginLeft", +distanceOfTailFromBorderForTurn + 20 + "px")
-      $three.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
-      $tail.css("marginLeft", +distanceOfTailFromBorderForTurn + 40 + "px")
-      $tail.animate({
-        marginTop: 318 + "px"
-      },1000);
+      var id10 = setInterval(frame,1000);
+
+      var counter = 1
+
+      var distanceOfTailFromBorder;
+      var newDistanceOfHead;
+      var distanceOfTailFromBorderForTurn;
+
+
+
+      function frame(){
+
+          
+          ///
+          if (counter == 1) {
+            distanceOfTailFromBorder = $tail.css("marginLeft").slice(0, -2);
+            newDistanceOfHead = +distanceOfTailFromBorder + 60
+            $head.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
+            distanceOfTailFromBorderForTurn = +distanceOfTailFromBorder + 20;
+            $tail.css("marginLeft", distanceOfTailFromBorderForTurn + "px")
+            counter++
+            console.log('1')
+          }
+          else if (counter == 2) {
+            $two.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
+            $tail.css("marginLeft", +distanceOfTailFromBorderForTurn + 20 + "px")
+            counter++
+            console.log('2')
+          }
+          else if (counter == 3) {
+            $three.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
+            $tail.css("marginLeft", +distanceOfTailFromBorderForTurn + 40 + "px")
+            counter++
+            console.log('3')
+          }
+          else if (counter == 4) {
+            $tail.animate({
+              marginTop: 318 + "px"
+            },1000);
+            counter++
+            console.log('4')
+            clearInterval(id10);
+          }
+
+        }
+
+
+
+
+
     };
 
 

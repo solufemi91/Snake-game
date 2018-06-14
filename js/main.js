@@ -7,6 +7,8 @@ $(function(event) {
   var $head = $('#head');
   var $tail = $('#tail');
   var $snakeNoHead = $("[class='snake'][id!='head']");
+  var $two = $("[data-block-number='2']")
+  var $three = $("[data-block-number='3']")
 
   function moveSnakeRight() {
     $snake.animate({
@@ -30,18 +32,24 @@ $(function(event) {
     },1000);
   };
 
-  function moveSnakeDown() {
+  function moveSnakeDown2() {
       // $snake.animate({
       //   marginTop: 378 + "px"
       // },1000);
       // $head.css({marginTop: 0 + "px", display: inherit, marginLeft: 60 + "px"});
+    };
+
+  function moveSnakeDown() {
+
       var distanceOfTailFromBorder = $tail.css("marginLeft").slice(0, -2);
       var newDistanceOfHead = +distanceOfTailFromBorder + 60
       $head.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
-      // move the three blocks to the right. the blocks must move the distance of one block, without moving the head
-      // move all the snakes that don't have a class of head
       var distanceOfTailFromBorderForTurn = +distanceOfTailFromBorder + 20
       $tail.css("marginLeft", distanceOfTailFromBorderForTurn + "px")
+      $two.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
+      $tail.css("marginLeft", +distanceOfTailFromBorderForTurn + 20 + "px")
+      $three.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
+      $tail.css("marginLeft", +distanceOfTailFromBorderForTurn + 40 + "px")
     };
 
 

@@ -17,20 +17,33 @@
   background: red;
   display: inline-block;
   /* margin-top: 0px; */
+  top: 0px;
   position: relative;
   left: 0px;
   right: 0px;
 }
 
 #head {
-  margin-top: 0px;
-}
-
-#tail {
-  margin-left: 0px;
-  margin-top: 0px;
+  position: relative;
+  top: 0px;
 }
 
 #two {
-  margin-top: 0px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+#three {
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+
+#tail {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  /* margin-left: 0px; */
 }

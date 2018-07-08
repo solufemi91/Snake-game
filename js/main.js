@@ -17,7 +17,56 @@ $(function(event) {
     },1000);
   };
 
-  function moveSnakeLeft() {
+  function turnDownFromRight() {
+
+      var id10 = setInterval(frame,500);
+      var counter = 1
+      var distanceOfTailFromBorder;
+      var newDistanceOfHead;
+      var distanceOfTailFromBorderForTurn;
+
+      function frame(){
+
+          if (counter == 1) {
+            distanceOfTailFromBorder = $tail.css("left").slice(0, -2);
+            newDistanceOfHead = +distanceOfTailFromBorder + 60;
+            $head.css({"display":"inherit","left": newDistanceOfHead + "px"});
+            distanceOfTailFromBorderForTurn = +distanceOfTailFromBorder + 20;
+            $two.css("left", distanceOfTailFromBorderForTurn + "px");
+            $three.css("left", distanceOfTailFromBorderForTurn + "px");
+            $four.css("left", distanceOfTailFromBorderForTurn + "px");
+            counter++
+            console.log('1')
+          }
+          else if (counter == 2) {
+            $two.css({"display":"inherit","left": newDistanceOfHead + "px"});
+            $three.css("left", +distanceOfTailFromBorderForTurn + 20 + "px");
+            $four.css("left", +distanceOfTailFromBorderForTurn + 20 + "px");
+            counter++
+            console.log('2')
+          }
+          else if (counter == 3) {
+            $three.css({"display":"inherit","left": newDistanceOfHead + "px"});
+            $tail.css("left", +distanceOfTailFromBorderForTurn + 40 + "px")
+            counter++
+            console.log('3')
+          }
+          else if (counter == 4) {
+            $snake.animate({
+              top: 318 + "px"
+            },1000);
+            counter++
+            console.log('4')
+            clearInterval(id10);
+          }
+
+        }
+
+    };
+
+
+
+  function moveSnakeLeftFromDown() {
     $snake.animate({
       left: 0 + "px",
 
@@ -91,49 +140,7 @@ $(function(event) {
   };
 
 
-  function moveSnakeDown() {
 
-      var id10 = setInterval(frame,500);
-      var counter = 1
-      var distanceOfTailFromBorder;
-      var newDistanceOfHead;
-      var distanceOfTailFromBorderForTurn;
-
-      function frame(){
-
-          if (counter == 1) {
-            distanceOfTailFromBorder = $tail.css("marginLeft").slice(0, -2);
-            newDistanceOfHead = +distanceOfTailFromBorder + 60
-            $head.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
-            distanceOfTailFromBorderForTurn = +distanceOfTailFromBorder + 20;
-            $tail.css("marginLeft", distanceOfTailFromBorderForTurn + "px")
-            counter++
-            console.log('1')
-          }
-          else if (counter == 2) {
-            $two.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
-            $tail.css("marginLeft", +distanceOfTailFromBorderForTurn + 20 + "px")
-            counter++
-            console.log('2')
-          }
-          else if (counter == 3) {
-            $three.css({"display":"inherit","marginLeft": newDistanceOfHead + "px"});
-            $tail.css("marginLeft", +distanceOfTailFromBorderForTurn + 40 + "px")
-            counter++
-            console.log('3')
-          }
-          else if (counter == 4) {
-            $tail.animate({
-              marginTop: 318 + "px"
-            },1000);
-            counter++
-            console.log('4')
-            clearInterval(id10);
-          }
-
-        }
-
-    };
 
 
   $(document).ready(function(){
@@ -144,13 +151,13 @@ $(function(event) {
           moveSnakeRight();
         }  else if (event.which == 37 ) {
           $snake.stop();
-          moveSnakeLeft();
+          moveSnakeLeftFromDown();
         } else if (event.which == 38 ) {
           $snake.stop();
           moveSnakeUp();
         } else if (event.which == 40) {
           $snake.stop();
-          moveSnakeDown();
+          turnDownFromRight();
         }
     });
   });

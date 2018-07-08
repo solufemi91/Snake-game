@@ -13,8 +13,7 @@ $(function(event) {
 
   function moveSnakeRight() {
     $snake.animate({
-      marginLeft: 318 + "px",
-      marginRight: -318 + "px"
+      left: 318 + "px",
     },1000);
   };
 

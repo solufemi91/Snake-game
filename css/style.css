@@ -16,9 +16,10 @@
   height: 20px;
   background: red;
   display: inline-block;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 0px;
+  /* margin-top: 0px; */
+  position: relative;
+  left: 0px;
+  right: 0px;
 }
 
 #head {

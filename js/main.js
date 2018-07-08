@@ -18,10 +18,10 @@ $(function(event) {
   };
 
   function moveSnakeLeft() {
-    // $snake.animate({
-    //   marginLeft: 0 + "px",
-    //   marginRight: 0 + "px"
-    // },1000);
+    $snake.animate({
+      left: 0 + "px",
+
+    },1000);
 
     var id10 = setInterval(frame,500);
     var counter = 1
